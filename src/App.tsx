@@ -10,22 +10,12 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
-      <div
-        style={{
-          padding: "20px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "86vh",
-        }}
-      >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/posts" element={<Posts />} />
-          <Route path="/posts/:id" element={<Post />} />
-          <Route path="/create-post" element={<CreatePost />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:id" element={<Post />} />
+        <Route path="/create-post" element={<CreatePost />} />
+      </Routes>
     </>
   );
 };
