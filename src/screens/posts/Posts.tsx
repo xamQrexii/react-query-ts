@@ -1,5 +1,5 @@
 import React from "react";
-import { Skeleton, Card, Row, Col, notification, Result, Button } from "antd";
+import { Skeleton, Card, Row, Col, notification, Result } from "antd";
 import { Link } from "react-router-dom";
 
 import usePosts from "../../hooks/usePosts";
@@ -17,17 +17,7 @@ const Posts: React.FC = () => {
   }, [isError, error]);
 
   if (isError) {
-    return (
-      <Result
-        title="403"
-        subTitle="Sorry, you are not authorized to access this page."
-        extra={
-          <Button type="primary">
-            <Link to="/">Back Home</Link>
-          </Button>
-        }
-      />
-    );
+    return <Result title="404" subTitle={`${error.message} :(`} />;
   }
 
   if (isLoading) {
