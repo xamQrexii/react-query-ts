@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "./components/header/Header";
 
 const App: React.FC = () => {
-  return <>Hello World From React TS</>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default App;
