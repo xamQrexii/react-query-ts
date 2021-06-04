@@ -7,7 +7,7 @@ import "./Header.scss";
 const Header: React.FC = () => (
   <PageHeader
     className="site-page-header"
-    title="No React Query"
+    title="React Query"
     subTitle="Demo"
     footer={<Navbar />}
   />

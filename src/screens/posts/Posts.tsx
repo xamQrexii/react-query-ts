@@ -1,23 +1,14 @@
 import React from "react";
-import { Skeleton, Card, Row, Col, notification, Result } from "antd";
+import { Skeleton, Card, Row, Col } from "antd";
 import { Link } from "react-router-dom";
 
 import usePosts from "../../hooks/usePosts";
 
 const Posts: React.FC = () => {
-  const { isLoading, data, isError, error } = usePosts();
-
-  React.useEffect(() => {
-    if (isError) {
-      notification.error({
-        message: "Something went wrong",
-        description: error.message,
-      });
-    }
-  }, [isError, error]);
+  const { isLoading, data, isError } = usePosts();
 
   if (isError) {
-    return <Result title="404" subTitle={`${error.message} :(`} />;
+    return <div>Something went wrong...</div>;
   }
 
   if (isLoading) {
